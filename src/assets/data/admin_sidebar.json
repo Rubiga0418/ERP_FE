@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Dashboard",
+        "icon": "ni ni-tv-2 text-primary",
+        "subMenu": [
+            { "id": "1-1", "title": "Overview", "link": "#overview" },
+            { "id": "1-2", "title": "Analytics", "link": "#analytics" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Tables",
+        "icon": "ni ni-calendar-grid-58 text-warning",
+        "subMenu": [
+            { "id": "2-1", "title": "User Tables", "link": "#user-tables" },
+            { "id": "2-2", "title": "Product Tables", "link": "#product-tables" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Billing",
+        "icon": "ni ni-credit-card text-success",
+        "link": "#",
+        "subMenu": [] 
+    },
+    {
+        "id": 4,
+        "title": "Virtual Reality",
+        "icon": "ni ni-app text-info",
+        "link": "#",
+        "subMenu": []
+    }
+]

@@ -1,0 +1,29 @@
+/* Main menu active item */
+.nav-link.active {
+    background-color: #f0f4f8;
+    color: #007bff; /* Highlight color for the main menu item */
+}
+
+/* Submenu styling */
+.sub-menu-item {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* Default submenu item styling */
+.sub-menu-item a {
+    color: #333; /* Default text color */
+    text-decoration: none;
+}
+
+/* Only change color for the clicked (active) submenu item */
+.sub-menu-item.active a {
+    color: #007bff; /* Highlight color when clicked */
+    font-weight: bold; /* Optional bold */
+}
+
+/* Ensure other styles remain unaffected */
+.sub-menu-item a:hover {
+    color: #007bff; /* Hover color, if needed */
+}
+

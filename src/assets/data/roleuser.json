@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "username":"admin@gmail.com",
+        "password":"admin123",
+        "role":"Master"
+    },
+    {
+        "id":2,
+        "username":"staff@gmail.com",
+        "password":"staff123",
+        "role":"Staff"
+    },
+    {
+        "id":3,
+        "username":"student@gmail.com",
+        "password":"student123",
+        "role":"Student"
+    },
+    {
+        "id":4,
+        "username":"parent@gmail.com",
+        "password":"parent123",
+        "role":"Parent"
+    }
+]
