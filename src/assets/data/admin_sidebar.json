@@ -1,34 +1,120 @@
 [
     {
         "id": 1,
-        "title": "Dashboard",
+        "title": "Master",
         "icon": "ni ni-tv-2 text-primary",
         "subMenu": [
-            { "id": "1-1", "title": "Overview", "link": "#overview" },
-            { "id": "1-2", "title": "Analytics", "link": "#analytics" }
+            {
+                "id": "1-1",
+                "title": "Hostel",
+                "link": "#hostel",
+                "subMenu": [
+                    { "id": "1-1-1", "title": "Room Allocation", "link": "#room-allocation" },
+                    { "id": "1-1-2", "title": "Hostel Fees", "link": "#hostel-fees" }
+                ]
+            },
+            {
+                "id": "1-2",
+                "title": "Transport",
+                "link": "#transport",
+                "subMenu": [
+                    { "id": "1-2-1", "title": "Routes", "link": "#routes" },
+                    { "id": "1-2-2", "title": "Bus Allocation", "link": "#bus-allocation" }
+                ]
+            },
+            { "id": "1-3", "title": "Inventory", "link": "#inventory" },
+            { "id": "1-4", "title": "Accounts", "link": "#accounts" },
+            { "id": "1-5", "title": "Reports", "link": "#reports" },
+            { "id": "1-6", "title": "Library", "link": "#library" },
+            { "id": "1-7", "title": "Exam", "link": "#exam" },
+            { "id": "1-8", "title": "Certificate", "link": "#certificate" },
+            { "id": "1-9", "title": "Database Backup/Restore", "link": "#database-backup-restore" },
+            { "id": "1-10", "title": "Email Setting", "link": "#email-setting" },
+            { "id": "1-11", "title": "SMS Setting/WhatsApp", "link": "#sms-setting-whatsapp" }
         ]
     },
     {
         "id": 2,
-        "title": "Tables",
+        "title": "Academic",
         "icon": "ni ni-calendar-grid-58 text-warning",
         "subMenu": [
-            { "id": "2-1", "title": "User Tables", "link": "#user-tables" },
-            { "id": "2-2", "title": "Product Tables", "link": "#product-tables" }
+            { "id": "2-1", "title": "Academic Year", "link": "#academic-year" },
+            { "id": "2-2", "title": "Degree", "link": "#degree" },
+            { "id": "2-3", "title": "State", "link": "#state" },
+            { "id": "2-4", "title": "City", "link": "#city" },
+            { "id": "2-5", "title": "Year", "link": "#year" },
+            { "id": "2-6", "title": "Semester", "link": "#semester" },
+            { "id": "2-7", "title": "Course/Subject", "link": "#course-subject" },
+            { "id": "2-8", "title": "Grading System", "link": "#grading-system" },
+            { "id": "2-9", "title": "Student Status", "link": "#student-status", "description": "e.g., New Admission, Dropout, Passed out" },
+            { "id": "2-10", "title": "Placement", "link": "#placement" },
+            { "id": "2-11", "title": "Scholarship", "link": "#scholarship" }
         ]
     },
     {
         "id": 3,
-        "title": "Billing",
-        "icon": "ni ni-credit-card text-success",
-        "link": "#",
-        "subMenu": [] 
+        "title": "Staff",
+        "icon": "ni ni-diamond text-warning",
+        "subMenu": [
+            {
+                "id": "3-1",
+                "title": "Registration",
+                "link": "#registration",
+                "subMenu": [
+                    { "id": "3-1-1", "title": "Single", "link": "#single-registration" },
+                    { "id": "3-1-2", "title": "Bulk", "link": "#bulk-registration" }
+                ]
+            },
+            { "id": "3-2", "title": "Staff Document", "link": "#staff-document" },
+            { "id": "3-3", "title": "Subjects Handled", "link": "#subjects-handled" },
+            { "id": "3-4", "title": "Attendance", "link": "#attendance" },
+            { "id": "3-5", "title": "Library", "link": "#library" },
+            { "id": "3-6", "title": "Payroll", "link": "#payroll" }
+        ]
     },
     {
         "id": 4,
+        "title": "Student",
+        "icon": "ni ni-air-baloon text-warning",
+        "subMenu": [
+            {
+                "id": "4-1",
+                "title": "Registration",
+                "link": "#student-registration",
+                "subMenu": [
+                    { "id": "4-1-1", "title": "Single", "link": "#single-student-registration" },
+                    { "id": "4-1-2", "title": "Bulk", "link": "#bulk-student-registration" }
+                ]
+            },
+            { "id": "4-2", "title": "Transfer/Promotion", "link": "#transfer-promotion" },
+            { "id": "4-3", "title": "Student Documents", "link": "#student-documents" },
+            { "id": "4-4", "title": "Attendance", "link": "#student-attendance" },
+            {
+                "id": "4-5",
+                "title": "Library",
+                "link": "#student-library",
+                "subMenu": [
+                    { "id": "4-5-1", "title": "Issued Books", "link": "#issued-books" },
+                    { "id": "4-5-2", "title": "Return Books", "link": "#return-books" }
+                ]
+            },
+            { "id": "4-6", "title": "Fees Details", "link": "#fees-details" }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Billing",
+        "icon": "ni ni-collection text-success",
+        "subMenu": [
+            { "id": "5-1", "title": "Invoices", "link": "#invoices" },
+            { "id": "5-2", "title": "Payments", "link": "#payments" }
+        ]
+    },
+    {
+        "id": 6,
         "title": "Virtual Reality",
         "icon": "ni ni-app text-info",
-        "link": "#",
+        "link": "#virtual-reality",
         "subMenu": []
     }
 ]
