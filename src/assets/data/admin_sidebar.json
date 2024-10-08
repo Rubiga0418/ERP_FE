@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": 1, 
         "title": "Master",
         "icon": "ni ni-tv-2 text-primary",
         "subMenu": [
