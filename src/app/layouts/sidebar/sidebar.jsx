@@ -20,7 +20,7 @@ function Sidebar({ isOpen }) {
         return (
             <ul className={`sub-menu level-${level}`}>
                 {subMenu.map((subItem) => (
-                    <li key={subItem.id} className="sub-menu-item">
+                    <li key={subItem.id} className="sub-menu-item mt-2 text-sm">
                         <a
                             href={subItem.link}
                             className={`sub-menu-item ${activeSubMenu === subItem.id ? 'active' : ''}`} // Apply active class
@@ -43,7 +43,7 @@ function Sidebar({ isOpen }) {
     };
 
     return (
-        <aside
+        <nav
             className={`sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ${isOpen ? 'show' : 'hide'}`}
             id="sidenav-main"
         >
@@ -57,7 +57,7 @@ function Sidebar({ isOpen }) {
             <div className="w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     {sidebarData.map((item) => (
-                        <li className="nav-item my-1" key={item.id}>
+                        <li className="nav-item my-1 mt-2" key={item.id}>
                             <a
                                 className={`nav-link ${expandedMenu[1] === item.id ? 'active' : ''}`}
                                 href={item.link}
@@ -80,7 +80,7 @@ function Sidebar({ isOpen }) {
                     ))}
                 </ul>
             </div>
-        </aside>
+        </nav>
     );
 }
 

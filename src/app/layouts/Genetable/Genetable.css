@@ -1,0 +1,6 @@
+/* Add this to your CSS file */
+input[type="text"], .form-select {
+    width: auto; /* Adjust width for a better fit */
+    margin-right: 10px; /* Space between elements */
+  }
+  

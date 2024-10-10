@@ -9,7 +9,7 @@
                 "title": "Hostel",
                 "link": "#hostel",
                 "subMenu": [
-                    { "id": "1-1-1", "title": "Room Allocation", "link": "#room-allocation" },
+                    { "id": "1-1-1", "title": "Room Allocation", "link": "/adm/Hostel/Room-Allocation" },
                     { "id": "1-1-2", "title": "Hostel Fees", "link": "#hostel-fees" }
                 ]
             },

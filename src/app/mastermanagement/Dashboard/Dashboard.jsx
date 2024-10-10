@@ -31,6 +31,7 @@ function Dashboard() {
                     <div className="col-lg-5">
                         <CategoriesList />
                     </div>
+                    {/* <Genetable/> */}
                 </div>
             </div>
     

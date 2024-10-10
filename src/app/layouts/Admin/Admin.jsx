@@ -3,6 +3,8 @@ import Sidebar from '../sidebar/sidebar';
 import Dashboard from '../../mastermanagement/Dashboard/Dashboard';
 import Navbar from '../Navbar/Navbar';
 
+import RoomAllocation from '../../mastermanagement/Hostel/Room Allocation/RoomAllocation';
+
 import { Routes, Route } from 'react-router-dom';
 
 function Admin() {
@@ -22,6 +24,7 @@ function Admin() {
                 <Navbar toggleSidebar={toggleSidebar} />
                 <Routes>
                     <Route path='/' element={<DashBoard/>} />
+                    <Route path="/Hostel/*" element={<Room/>}/>
                 </Routes>
             </main>
         </div>
@@ -36,6 +39,16 @@ function DashBoard(){
             </Routes>
         </>
     );
+}
+
+function Room(){
+    return(
+        <>
+            <Routes>
+                <Route path='/Room-Allocation' element={<RoomAllocation/>}/>
+            </Routes>
+        </>
+    )
 }
 
 export default Admin;
