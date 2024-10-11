@@ -35,7 +35,11 @@ function Sidebar({ isOpen }) {
                         >
                             {subItem.title}
                         </a>
-                        {subItem.subMenu && expandedMenu[level] === subItem.id && renderSubMenu(subItem.subMenu, level + 1)}
+                        {subItem.subMenu && expandedMenu[level] === subItem.id && (
+                            <ul> {/* Wrap submenus correctly */}
+                                {renderSubMenu(subItem.subMenu, level + 1)}
+                            </ul>
+                        )}
                     </li>
                 ))}
             </ul>
