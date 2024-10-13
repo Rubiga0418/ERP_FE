@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Student Profile",
+        "icon": "ni ni-single-02 text-primary"
+    },
+    {
+        "id": 2,
+        "title": "Student Attendance View",
+        "icon": "ni ni-check-bold text-info"
+    },
+    {
+        "id": 3,
+        "title": "Assignment Submission",
+        "icon": "ni ni-book-bookmark text-warning"
+    },
+    {
+        "id": 4,
+        "title": "TimeTable",
+        "icon": "ni ni-calendar-grid-58 text-success"
+    },
+    {
+        "id": 5,
+        "title": "Student Request Leave",
+        "icon": "ni ni-user-run text-danger"
+    },
+    {
+        "id": 6,
+        "title": "Student Documents Upload",
+        "icon": "ni ni-folder-17 text-primary"
+    },
+    {
+        "id": 7,
+        "title": "Holiday",
+        "icon": "ni ni-sun text-orange"
+    },
+    {
+        "id": 8,
+        "title": "Event",
+        "icon": "ni ni-calendar-grid-58 text-blue"
+    },
+    {
+        "id": 9,
+        "title": "Notification",
+        "icon": "ni ni-bell-55 text-danger"
+    },
+    {
+        "id": 10,
+        "title": "Scholarship Renewal Process",
+        "icon": "ni ni-money-coins text-info"
+    },
+    {
+        "id": 11,
+        "title": "Course List",
+        "icon": "ni ni-bullet-list-67 text-primary"
+    },
+    {
+        "id": 12,
+        "title": "Grade/Mark & Credit",
+        "icon": "ni ni-chart-bar-32 text-success"
+    },
+    {
+        "id": 13,
+        "title": "Hostel Booking",
+        "icon": "ni ni-building text-secondary"
+    },
+    {
+        "id": 14,
+        "title": "Internal Mark Details",
+        "icon": "ni ni-ruler-pencil text-purple"
+    },
+    {
+        "id": 15,
+        "title": "Hostel Detail",
+        "icon": "ni ni-building text-secondary"
+    },
+    {
+        "id": 16,
+        "title": "Transport Details",
+        "icon": "ni ni-bus-front-12 text-teal"
+    },
+    {
+        "id": 17,
+        "title": "Transport Booking",
+        "icon": "ni ni-calendar-grid-58 text-purple"
+    },
+    {
+        "id": 18,
+        "title": "Fees Payment",
+        "icon": "ni ni-credit-card text-warning"
+    }
+]

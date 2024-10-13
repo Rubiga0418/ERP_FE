@@ -1,50 +1,84 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './sidebar.css';
+
 import logo from '../../../assets/images/logo/apple-icon.png';
-import sidebarData from '../../../assets/data/admin_sidebar.json';
+
+import adminData from '../../../assets/data/admin_sidebar.json';
+import staffData from '../../../assets/data/staff_sidebar.json';
+import studentData from '../../../assets/data/student_sidebar.json';
 
 function Sidebar({ isOpen }) {
     const [expandedMenu, setExpandedMenu] = useState({});
-    const [activeSubMenu, setActiveSubMenu] = useState(null); // Track active submenu
+    const [activeItem, setActiveItem] = useState(null);
+    const [userRole, setUserRole] = useState(null);
 
-    // Toggle sub-menu visibility, ensuring only one is open at a time
+    useEffect(() => {
+        // Retrieve user information from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            setUserRole(user.role);
+        }
+    }, []);
+
+    const getSidebarData = () => {
+        switch (userRole) {
+            case 'Admin':
+                return adminData;
+            case 'Staff':
+                return staffData;
+            case 'Student':
+                return studentData;
+            default:
+                return []; // Return an empty array or a default menu if role is unrecognized
+        }
+    };
+
+    const sidebarData = getSidebarData();
+
     const toggleSubMenu = (id, level) => {
-        setExpandedMenu((prevExpanded) => ({
-            ...prevExpanded,
-            [level]: prevExpanded[level] === id ? null : id
-        }));
-        setActiveSubMenu(null); // Reset active submenu when toggling
+        setExpandedMenu((prevExpanded) => {
+            // Close all submenus at lower levels
+            const newExpanded = { ...prevExpanded };
+            for (let i = level; i <= Object.keys(prevExpanded).length; i++) {
+                delete newExpanded[i];
+            }
+            // Toggle the current level's item
+            return {
+                ...newExpanded,
+                [level]: prevExpanded[level] === id ? null : id
+            };
+        });
+        setActiveItem(id);
     };
 
-    const renderSubMenu = (subMenu, level = 1) => {
-        return (
-            <ul className={`sub-menu level-${level}`}>
-                {subMenu.map((subItem) => (
-                    <li key={subItem.id} className="sub-menu-item mt-2 text-sm">
-                        <a
-                            href={subItem.link}
-                            className={`sub-menu-item ${activeSubMenu === subItem.id ? 'active' : ''}`} // Apply active class
-                            onClick={(e) => {
-                                if (subItem.subMenu) {
-                                    e.preventDefault();
-                                    toggleSubMenu(subItem.id, level);
-                                } else {
-                                    setActiveSubMenu(subItem.id); // Set active submenu
-                                }
-                            }}
-                        >
-                            {subItem.title}
-                        </a>
-                        {subItem.subMenu && expandedMenu[level] === subItem.id && (
-                            <ul> {/* Wrap submenus correctly */}
-                                {renderSubMenu(subItem.subMenu, level + 1)}
-                            </ul>
-                        )}
-                    </li>
-                ))}
-            </ul>
-        );
-    };
+    const renderSubMenu = (subMenu, level = 1) => (
+        <ul className={`sub-menu level-${level}`}>
+            {subMenu.map((subItem) => (
+                <li key={subItem.id} className={`sub-menu-item mt-3 text-sm level-${level}-item`}>
+                    <a
+                        href={subItem.link}
+                        className={`sub-menu-link ${activeItem === subItem.id ? 'active' : ''}`}
+                        onClick={(e) => {
+                            if (subItem.subMenu) {
+                                e.preventDefault();
+                                toggleSubMenu(subItem.id, level);
+                            } else {
+                                setActiveItem(subItem.id);
+                            }
+                        }}
+                    >
+                        {subItem.icon && <i className={`${subItem.icon} me-2`}></i>}
+                        {subItem.title}
+                    </a>
+                    {subItem.subMenu && expandedMenu[level] === subItem.id && (
+                        <ul className="nested-submenu">
+                            {renderSubMenu(subItem.subMenu, level + 1)}
+                        </ul>
+                    )}
+                </li>
+            ))}
+        </ul>
+    );
 
     return (
         <nav
@@ -61,7 +95,7 @@ function Sidebar({ isOpen }) {
             <div className="w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     {sidebarData.map((item) => (
-                        <li className="nav-item my-1 mt-2" key={item.id}>
+                        <li className="nav-item my-3 mt-2" key={item.id}>
                             <a
                                 className={`nav-link ${expandedMenu[1] === item.id ? 'active' : ''}`}
                                 href={item.link}
@@ -70,7 +104,7 @@ function Sidebar({ isOpen }) {
                                         e.preventDefault();
                                         toggleSubMenu(item.id, 1);
                                     } else {
-                                        setActiveSubMenu(item.id); // Set active menu item
+                                        setActiveItem(item.id);
                                     }
                                 }}
                             >

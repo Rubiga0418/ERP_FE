@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Staff Profile",
+        "icon": "ni ni-single-02 text-primary"
+    },
+    {
+        "id": 2,
+        "title": "Student Attendance",
+        "icon": "ni ni-check-bold text-info"
+    },
+    {
+        "id": 3,
+        "title": "Assignment",
+        "icon": "ni ni-book-bookmark text-warning"
+    },
+    {
+        "id": 4,
+        "title": "Mark Evaluation",
+        "icon": "ni ni-chart-bar-32 text-success"
+    },
+    {
+        "id": 5,
+        "title": "Student Leave Approval",
+        "icon": "ni ni-user-run text-danger"
+    },
+    {
+        "id": 6,
+        "title": "Time Table (Particular Staff)",
+        "icon": "ni ni-calendar-grid-58 text-purple"
+    },
+    {
+        "id": 7,
+        "title": "Staff Holiday",
+        "icon": "ni ni-sun text-orange"
+    },
+    {
+        "id": 8,
+        "title": "Holiday",
+        "icon": "ni ni-sun-fog text-blue"
+    },
+    {
+        "id": 9,
+        "title": "Event",
+        "icon": "ni ni-calendar-grid-58 text-success"
+    },
+    {
+        "id": 10,
+        "title": "Notification",
+        "icon": "ni ni-bell-55 text-danger"
+    },
+    {
+        "id": 11,
+        "title": "Communication Approval",
+        "icon": "ni ni-check-bold text-info"
+    },
+    {
+        "id": 12,
+        "title": "Staff Documents Upload",
+        "icon": "ni ni-folder-17 text-primary"
+    },
+    {
+        "id": 13,
+        "title": "Payroll",
+        "icon": "ni ni-credit-card text-warning"
+    },
+    {
+        "id": 14,
+        "title": "Hostel Detail",
+        "icon": "ni ni-building text-secondary"
+    },
+    {
+        "id": 15,
+        "title": "Transport Details",
+        "icon": "ni ni-bus-front-12 text-purple"
+    },
+    {
+        "id": 16,
+        "title": "Transport Booking",
+        "icon": "ni ni-calendar-grid-58 text-teal"
+    }
+]

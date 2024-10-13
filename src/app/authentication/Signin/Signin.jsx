@@ -1,32 +1,25 @@
-import React, { useState,useContext } from 'react';
-// import AuthContext from '../../services/AuthContext'
-import roleuser from "../../../assets/data/roleuser.json";
+import React, { useState } from 'react';
+import roleuser from '../../../assets/data/roleuser.json';
 import './Signin.css';
-
 import { useNavigate } from 'react-router-dom';
 
 function Signin() {
-    // const { loginUser } = useContext(AuthContext);
-
-    const Detail = roleuser;
-
     const history = useNavigate();
+    const Detail = roleuser;
 
     const [formValues, setFormValues] = useState({ username: '', password: '' });
     const [formErrors, setFormErrors] = useState({ username: '', password: '' });
-    // const [isSubmitted, setIsSubmitted] = useState(false);
 
     const validateForm = () => {
         const errors = {};
-        // Email validation (simple regex for basic validation)
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (!formValues.username) {
             errors.username = "Email is required";
         } else if (!emailPattern.test(formValues.username)) {
             errors.username = "Invalid email format";
         }
 
-        // Password validation
         if (!formValues.password) {
             errors.password = "Password is required";
         } else if (formValues.password.length < 6) {
@@ -44,19 +37,30 @@ function Signin() {
             const user = Detail.find(
                 (user) => user.username === formValues.username && user.password === formValues.password
             );
-    
+
             if (user) {
+                // Store user details in localStorage
+                localStorage.setItem('user', JSON.stringify({ username: user.username, role: user.role }));
+
                 console.log("Form Submitted:", formValues.username, formValues.password);
                 console.log("User Role:", user.role);
-                history('/adm');
+
+                // Redirect based on user role
+                if (user.role === 'Admin') {
+                    history('/adm');
+                } else if (user.role === 'Staff') {
+                    history('/staff');
+                } else if (user.role === 'Student') {
+                    history('/student');
+                } else {
+                    console.log("Role not recognized");
+                }
             } else {
                 console.log("Invalid credentials");
-                
             }
         }
     };
-    
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({
@@ -110,14 +114,10 @@ function Signin() {
                                                         <span className="text-danger">{formErrors.password}</span>
                                                     )}
                                                 </div>
-                                               
                                                 <div className="text-center">
                                                     <button type="submit" className="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                                                 </div>
                                             </form>
-                                            {/* {isSubmitted && (
-                                                <p className="text-success mt-3">Form submitted successfully!</p>
-                                            )} */}
                                         </div>
                                     </div>
                                 </div>

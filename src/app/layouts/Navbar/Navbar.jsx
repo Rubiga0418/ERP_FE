@@ -29,20 +29,20 @@ function Navbar({ toggleSidebar }) {
                     </div>
                     <ul className="navbar-nav justify-content-end">
                         <li className="nav-item d-flex align-items-center">
-                            {/* Remove nested <li> */}
                             <a onClick={handleSignIn} className="nav-link text-white font-weight-bold px-0" aria-label="Sign In">
                                 <i className="fa fa-user me-sm-1"></i>
                                 <span className="d-sm-inline d-none ml-4">Sign In</span>
                             </a>
                         </li>
+                        {/* Toggler for Sidebar in Mobile View */}
                         <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
-                            <button onClick={toggleSidebar} className="nav-link text-white p-0" aria-label="Toggle Sidebar" style={{ cursor: "pointer" }}>
+                            <a onClick={toggleSidebar} className="nav-link text-white p-0" aria-label="Toggle Sidebar" style={{ cursor: "pointer" }}>
                                 <div className="sidenav-toggler-inner">
                                     <i className="sidenav-toggler-line bg-white"></i>
                                     <i className="sidenav-toggler-line bg-white"></i>
                                     <i className="sidenav-toggler-line bg-white"></i>
                                 </div>
-                            </button>
+                            </a>
                         </li>
                     </ul>
                 </div>

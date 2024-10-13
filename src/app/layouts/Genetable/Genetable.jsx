@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Genetable({ data, filterEnabled, column }) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [isFilterEnabled, setIsFilterEnabled] = useState(filterEnabled); // Renamed state variable
+    const [isFilterEnabled] = useState(filterEnabled); // Renamed state variable
     const [filterColumn, setFilterColumn] = useState("name");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
