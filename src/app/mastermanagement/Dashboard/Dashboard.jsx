@@ -1,19 +1,53 @@
 import React from "react";
 
+const metrics = [
+    {
+      title: "Today's Money",
+      amount: "$53,000",
+      percentage: "+55%",
+      icon: "ni ni-money-coins",
+      bgColor: "bg-gradient-primary shadow-primary",
+    },
+    {
+      title: "Today's Users",
+      amount: "2,300",
+      percentage: "+3%",
+      icon: "ni ni-world",
+      bgColor: "bg-gradient-danger shadow-danger",
+    },
+    {
+      title: "New Clients",
+      amount: "+3,462",
+      percentage: "-2%",
+      icon: "ni ni-paper-diploma",
+      bgColor: "bg-gradient-success shadow-success",
+    },
+    {
+      title: "Sales",
+      amount: "$103,430",
+      percentage: "+5%",
+      icon: "ni ni-cart",
+      bgColor: "bg-gradient-warning shadow-warning",
+    }
+  ];
+
+  
 function Dashboard() {
     return (
        
             <div className="container-fluid py-4">
                 <div className="row">
-                    <MetricCard 
-                        title="Today's Money" 
-                        amount="$53,000" 
-                        percentage="+55%" 
-                        icon="ni ni-money-coins" 
-                    />
-                    {/* Repeat similar structure for other metrics */}
-                    {/* ... other MetricCard components */}
-                </div>
+                    {metrics.map((metric, index) => (
+                        <MetricCard
+                        key={index}
+                        title={metric.title}
+                        amount={metric.amount}
+                        percentage={metric.percentage}
+                        icon={metric.icon}
+                        bgColor={metric.bgColor}
+                        />
+                    ))}
+                    </div>
 
                 <div className="row mt-4">
                     <div className="col-lg-7 mb-lg-0 mb-4">
@@ -39,7 +73,7 @@ function Dashboard() {
 }
 
 // Metric Card Component
-const MetricCard = ({ title, amount, percentage, icon }) => {
+const MetricCard = ({ title, amount, percentage, icon, bgColor }) => {
     return (
         <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div className="card">
@@ -55,7 +89,7 @@ const MetricCard = ({ title, amount, percentage, icon }) => {
                             </div>
                         </div>
                         <div className="col-4 text-end">
-                            <div className="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                            <div className={`icon icon-shape ${bgColor} text-center rounded-circle`}>
                                 <i className={`${icon} text-lg opacity-10`} aria-hidden="true"></i>
                             </div>
                         </div>
@@ -65,6 +99,7 @@ const MetricCard = ({ title, amount, percentage, icon }) => {
         </div>
     );
 };
+
 
 // Sales Overview Component
 const SalesOverview = () => {

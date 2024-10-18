@@ -79,7 +79,7 @@ function RoomAllocation() {
             </div>
 
             {/* Display the authors in a table format */}
-            <Genetable data={authors} filterEnabled={false} column={column_table} />
+            <Genetable data={authors} filterEnabled={false} column={column_table} Title={"Room Allocation Table"}/>
 
             {/* Custom Modal for adding room allocation */}
             {showModal && (

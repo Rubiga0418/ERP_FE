@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Genetable({ data, filterEnabled, column }) {
+function Genetable({ data, filterEnabled, column,Title }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [isFilterEnabled] = useState(filterEnabled); // Renamed state variable
     const [filterColumn, setFilterColumn] = useState("name");
@@ -49,7 +49,7 @@ function Genetable({ data, filterEnabled, column }) {
                 <div className="col-12">
                     <div className="card mb-8">
                         <div className="card-header pb-0 text-center">
-                            <h6 className="my-3">Room Allocation Table</h6>
+                            <h6 className="my-3">{Title}</h6>
 
                             {isFilterEnabled && (
                                 <div className="row mb-3 justify-content-center">

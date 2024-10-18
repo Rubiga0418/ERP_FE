@@ -86,7 +86,7 @@ function Sidebar({ isOpen }) {
             id="sidenav-main"
         >
             <div className="sidenav-header">
-                <a className="navbar-brand m-0 mx-1" href='/adm'>
+                <a className="navbar-brand m-0" href='/adm'>
                     <img src={logo} className="navbar-brand-img h-100" alt="main_logo" />
                     <span className="ms-1 font-weight-bold">Deva Raj Dashboard</span>
                 </a>
