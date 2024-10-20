@@ -129,7 +129,7 @@
                 "icon": "ni ni-key-25",  
                 "subMenu": [
                     { "id": "2-6-1", "title": "Request Gate Pass", "link": "#Request-Gate-Pass", "icon": "ni ni-lock-circle-open" },
-                    { "id": "2-6-2", "title": "Approved Gate Passes", "link": "#Approved-Gate-Passes", "icon": "ni ni-check-bold" },  
+                    { "id": "2-6-2", "title": "Approved Gate Passes", "link": "/adm/Gatepass/Approved-Gate-Pass", "icon": "ni ni-check-bold" },  
                     { "id": "2-6-3", "title": "Gate Pass History", "link": "#Gate-Pass-History", "icon": "ni ni-time-alarm" } 
                 ]
             }

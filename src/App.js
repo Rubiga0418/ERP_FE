@@ -13,7 +13,7 @@ import Staff from './app/layouts/Staff/Staff';
 // Student management
 import Student from './app/layouts/Student/Student'
 
-function App() {
+function App() { 
   return (
     <Router>
       <Routes>
