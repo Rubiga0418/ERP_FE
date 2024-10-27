@@ -1,0 +1,90 @@
+// code in push -- > website views
+
+Step -- > 1
+    git status
+
+On branch Murugan_27-10-2024
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+         * (modified,new,delete)
+        modified:   src/app/layouts/Admin/Admin.jsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Step -- > 2
+    git add .
+    git status
+
+On branch Murugan_27-10-2024
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   src/app/layouts/Admin/Admin.jsx
+
+Step -- > 3
+        (git commit -m "message commit")
+    git commit -m "modified file is Admin"
+
+[Murugan_27-10-2024 b228354] modified file is Admin
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+    
+    git status
+On branch Murugan_27-10-2024
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Step -- > 3(I) // remote (add,check)
+    // check
+        git remote
+
+            origin
+            (or)
+        git remote -v
+
+            origin  https://github.com/Balakumar3557/ERP_FE.git (fetch)
+            origin  https://github.com/Balakumar3557/ERP_FE.git (push)
+    
+    // add
+            git remote add (short-name) url
+        git remote add origin https://github.com/Balakumar3557/ERP_FE
+
+        git remote -v
+
+            origin  https://github.com/Balakumar3557/ERP_FE.git (fetch)
+            origin  https://github.com/Balakumar3557/ERP_FE.git (push)
+
+Step -- > 3(II) // branch (check,add)
+    // check 
+        git branch
+            Bala_27-10-2024
+            * Murugan_27-10-2024
+            Rubiga_27-10-2024
+
+        * -->working branch
+
+    // add (checkout,switch)
+        git checkout (branch name)
+            branch 'main' set up to track 'origin/main'.
+            Switched to a new branch 'main'
+
+                (or)
+
+        git switch (branch name)
+            branch 'main' set up to track 'origin/main'.
+            Switched to a new branch 'main'
+
+Step -- > 4 
+        git push (remote short name) (branch name)
+    git push origin main
+
+        Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+        remote: . Processing 1 references
+        remote: Processed 1 references in total
+        To https://github.com/Balakumar3557/ERP_FE.git
+        9cfba1d..6673a1f  master -> master
