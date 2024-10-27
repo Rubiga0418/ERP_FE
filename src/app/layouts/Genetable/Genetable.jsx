@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-function Genetable({ data, filterEnabled, column,Title }) {
+function Genetable({ data, filterEnabled, column, Title }) {
     const [searchTerm, setSearchTerm] = useState("");
-    const [isFilterEnabled] = useState(filterEnabled); // Renamed state variable
     const [filterColumn, setFilterColumn] = useState("name");
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
@@ -14,7 +13,7 @@ function Genetable({ data, filterEnabled, column,Title }) {
     };
 
     const filteredData = data.filter((item) => {
-        if (!isFilterEnabled) return true;
+        if (!filterEnabled) return true;
 
         const valueToCheck = item[filterColumn]?.toLowerCase() || "";
         const matchesSearchTerm = valueToCheck.includes(searchTerm.toLowerCase());
@@ -51,7 +50,7 @@ function Genetable({ data, filterEnabled, column,Title }) {
                         <div className="card-header pb-0 text-center">
                             <h6 className="my-3">{Title}</h6>
 
-                            {isFilterEnabled && (
+                            {filterEnabled && (
                                 <div className="row mb-3 justify-content-center">
                                     <div className="col-md-3">
                                         <label htmlFor="filterColumn" className="form-label">Filter By</label>
@@ -109,19 +108,15 @@ function Genetable({ data, filterEnabled, column,Title }) {
                                         {column.map((col, index) => (
                                             <th key={index}>{col.display_name}</th>
                                         ))}
-                                        {/* <th>Employed Date</th> */}
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm">
                                     {currentData.map((item, index) => (
                                         <tr key={index}>
-                                            <td>{item.name}</td>
-                                            <td>{item.email}</td>
-                                            <td>{item.role}</td>
-                                            <td>{item.organization}</td>
-                                            <td>{item.status}</td>
-                                            <td>{item.employedDate}</td>
+                                            {column.map((col, colIndex) => (
+                                                <td key={colIndex}>{item[col.column]}</td>
+                                            ))}
                                             <td>
                                                 <button
                                                     className="btn btn-primary btn-sm"

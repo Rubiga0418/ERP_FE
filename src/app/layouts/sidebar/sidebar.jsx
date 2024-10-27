@@ -45,7 +45,7 @@ function Sidebar({ isOpen }) {
             // Toggle the current level's item
             return {
                 ...newExpanded,
-                [level]: prevExpanded[level] === id ? null : id
+                [level]: prevExpanded[level] === id ? null : id,
             };
         });
         setActiveItem(id);
@@ -66,9 +66,19 @@ function Sidebar({ isOpen }) {
                                 setActiveItem(subItem.id);
                             }
                         }}
+                        aria-haspopup={!!subItem.subMenu} // Improved accessibility
+                        aria-expanded={expandedMenu[level] === subItem.id}
                     >
                         {subItem.icon && <i className={`${subItem.icon} me-2`}></i>}
                         {subItem.title}
+                        {/* Conditional rendering for chevron up/down */}
+                        {subItem.subMenu && (
+                            <i
+                                className={`fas ms-auto ${
+                                    expandedMenu[level] === subItem.id ? 'fa-chevron-up' : 'fa-chevron-down'
+                                }`}
+                            ></i>
+                        )}
                     </a>
                     {subItem.subMenu && expandedMenu[level] === subItem.id && (
                         <ul className="nested-submenu">
@@ -107,11 +117,18 @@ function Sidebar({ isOpen }) {
                                         setActiveItem(item.id);
                                     }
                                 }}
+                                aria-haspopup={!!item.subMenu} // Improved accessibility
+                                aria-expanded={expandedMenu[1] === item.id}
                             >
                                 <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                     <i className={`${item.icon} text-sm opacity-10`}></i>
                                 </div>
                                 <span className="nav-link-text ms-1">{item.title}</span>
+                                {/* <i
+                                    className={`fas ms-auto ${
+                                        expandedMenu[1] === item.id ? 'fa-chevron-up' : 'fa-chevron-down'
+                                    }`}
+                                ></i> */}
                             </a>
                             {item.subMenu && expandedMenu[1] === item.id && renderSubMenu(item.subMenu, 2)}
                         </li>

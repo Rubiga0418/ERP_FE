@@ -250,7 +250,7 @@
     {
         "id": 9,
         "title": "Certificate",
-        "icon": "ni ni-ribbon text-primary" ,
+        "icon": "fas fa-ribbon text-primary" ,
         "link": "#Certificate"    
     },
     {

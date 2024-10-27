@@ -89,3 +89,11 @@
 .sidenav {
     scrollbar-width: none; /* For Firefox */
 }
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+    transform: rotate(180deg);
+}
