@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import Sidebar from '../sidebar/sidebar';
 import Dashboard from '../../mastermanagement/Dashboard/Dashboard';
 import Navbar from '../Navbar/Navbar';
 
 import RoomAllocation from '../../mastermanagement/Hostel/Room Allocation/RoomAllocation';
-
-import { Routes, Route } from 'react-router-dom';
 import Gatepass from '../../mastermanagement/Hostel/Gatepass/Gatepass';
 
 function Admin() {

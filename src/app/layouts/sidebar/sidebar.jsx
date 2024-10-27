@@ -72,13 +72,23 @@ function Sidebar({ isOpen }) {
                         {subItem.icon && <i className={`${subItem.icon} me-2`}></i>}
                         {subItem.title}
                         {/* Conditional rendering for chevron up/down */}
-                        {subItem.subMenu && (
+                        {/* {subItem.subMenu && (
                             <i
-                                className={`fas ms-auto ${
+                                className={` fas ms-auto ${
                                     expandedMenu[level] === subItem.id ? 'fa-chevron-up' : 'fa-chevron-down'
                                 }`}
                             ></i>
+                        )} */}
+                       {subItem.subMenu && (
+                            <i
+                                className={`fas ${
+                                    expandedMenu[level] === subItem.id ? 'fa-chevron-up' : 'fa-chevron-down'
+                                }`}
+                                style={{ marginLeft: 'auto' ,marginRight : '20px'}} // Pushes the icon to the right side
+                            ></i>
                         )}
+
+
                     </a>
                     {subItem.subMenu && expandedMenu[level] === subItem.id && (
                         <ul className="nested-submenu">

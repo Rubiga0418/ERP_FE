@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Genetable from "../../../layouts/Genetable/Genetable";
 import './Gatepass.css';
+import Genetable from "../../../layouts/Genetable/Genetable";
 import AddGatepass from "./AddGatepass/AddGatepass";
 
 function Gatepass(){
